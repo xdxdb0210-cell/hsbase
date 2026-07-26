@@ -228,7 +228,7 @@
                       <a class="resume-doc-link" href="./정호성_영상편집_이력서.docx" target="_blank" rel="noreferrer"><span>DOCX</span><strong>이력서</strong><small>상세 이력 및 자기소개</small></a>
                       <a class="resume-doc-link" href="./정호성_배린이가_미치면_생기는_일_기획안.docx" target="_blank" rel="noreferrer"><span>DOCX</span><strong>영상 기획안</strong><small>콘텐츠 구성안</small></a>
                       <a class="resume-doc-link" href="https://youtu.be/QN0WuIsAuWc" target="_blank" rel="noreferrer"><span>YOUTUBE</span><strong>제작 영상</strong><small>업로드 영상 확인</small></a>
-                      <button class="resume-doc-link" type="button" data-open-plan data-plan-src="./planning-baerini-video.html" data-plan-title="배린이가 미치면 생기는 일 기획안"><span>WEB</span><strong>웹 기획안</strong><small>포트폴리오 내 기획안</small></button>
+                      <a class="resume-doc-link" href="./planning-baerini-video.html" target="_blank" rel="noreferrer"><span>WEB</span><strong>웹 기획안</strong><small>포트폴리오 내 기획안</small></a>
                       <a class="resume-doc-link" href="https://soomgo.com/profile/users/17757332" target="_blank" rel="noreferrer"><span>PROFILE</span><strong>보정 프로필</strong><small>포토샵 외주 경험</small></a>
                     </div>
                   </article>
@@ -465,7 +465,7 @@
               </p>
               <div class="case-actions" aria-label="프로젝트 링크">
                 <a class="case-link primary-link video-link" href="https://youtu.be/QN0WuIsAuWc" target="_blank" rel="noreferrer">유튜브 영상 열기</a>
-                <button class="case-link deck-link" type="button" data-open-plan data-plan-src="./planning-baerini-video.html" data-plan-title="배린이가 미치면 생기는 일 기획안">기획안 확인하기</button>
+                <a class="case-link deck-link" href="./planning-baerini-video.html" target="_blank" rel="noreferrer">기획안 확인하기</a>
               </div>
               <div class="case-stat-row" aria-label="프로젝트 요약">
                 <div><span>Format</span><strong>게임 예능형 업로드 영상</strong></div>
@@ -583,19 +583,6 @@
       </section>
     </main>
 
-    <dialog class="plan-modal" id="plan-modal" aria-labelledby="plan-modal-title">
-      <div class="plan-modal-shell">
-        <div class="plan-modal-head">
-          <div>
-            <span>Planning Preview</span>
-            <h3 id="plan-modal-title">기획안 확인하기</h3>
-          </div>
-          <button class="plan-modal-close" type="button" data-close-plan aria-label="기획안 팝업 닫기">닫기</button>
-        </div>
-        <iframe class="plan-modal-frame" title="기획안 미리보기" data-plan-frame></iframe>
-      </div>
-    </dialog>
-
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
@@ -671,55 +658,6 @@
         });
       }
 
-      const planModal = document.getElementById("plan-modal");
-      const planModalTitle = document.getElementById("plan-modal-title");
-      const planModalFrame = planModal?.querySelector("[data-plan-frame]");
-      const openPlanButtons = document.querySelectorAll("[data-open-plan]");
-      const closePlanButtons = document.querySelectorAll("[data-close-plan]");
-
-      const closePlanModal = () => {
-        if (!planModal) return;
-        if (typeof planModal.close === "function" && planModal.open) {
-          planModal.close();
-        } else {
-          planModal.removeAttribute("open");
-          if (planModalFrame) planModalFrame.removeAttribute("src");
-          if (!resumeModal?.open) document.body.classList.remove("modal-open");
-        }
-      };
-
-      openPlanButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          if (!planModal || !planModalFrame) return;
-          const src = button.getAttribute("data-plan-src");
-          if (!src) return;
-          const title = button.getAttribute("data-plan-title") || "기획안 확인하기";
-          if (planModalTitle) planModalTitle.textContent = title;
-          planModalFrame.setAttribute("src", src);
-          if (typeof planModal.showModal === "function") {
-            planModal.showModal();
-          } else {
-            planModal.setAttribute("open", "");
-          }
-          document.body.classList.add("modal-open");
-        });
-      });
-
-      closePlanButtons.forEach((button) => {
-        button.addEventListener("click", closePlanModal);
-      });
-
-      if (planModal) {
-        planModal.addEventListener("click", (event) => {
-          if (event.target === planModal) closePlanModal();
-        });
-
-        planModal.addEventListener("close", () => {
-          if (planModalFrame) planModalFrame.removeAttribute("src");
-          if (!resumeModal?.open) document.body.classList.remove("modal-open");
-        });
-      }
-
       const copyContactButtons = document.querySelectorAll("[data-copy-value]");
       const copyToClipboard = async (text) => {
         if (navigator.clipboard && window.isSecureContext) {
@@ -766,6 +704,8 @@
     </script>
   </body>
 </html>
+
+
 
 
 
