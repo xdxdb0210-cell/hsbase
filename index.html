@@ -22,6 +22,7 @@
         </a>
         <nav class="nav-links">
           <a href="#resume">Resume</a>
+          <a href="#freelance">Freelance</a>
           <a href="#fit">Fit</a>
           <a href="#works">Works</a>
           <a href="#contact">Contact</a>
@@ -392,6 +393,58 @@
         </div>
       </section>
 
+      <section class="freelance-proof" id="freelance">
+        <div class="section-head split freelance-head">
+          <div>
+            <p class="eyebrow">FREELANCE PROOF</p>
+            <h2>숨고 외주 활동으로 증명하는 사진 보정 운영 경험.</h2>
+          </div>
+        </div>
+
+        <div class="freelance-overview">
+          <div class="freelance-overview-copy">
+            <span class="label">Soomgo Outsourcing</span>
+            <h3>사진 편집 및 보정 외주를 고객 요청 중심으로 운영했습니다.</h3>
+            <p>
+              작업 난이도와 요청 범위를 먼저 정리하고, 자연스러운 리터칭과 색감 보정, 합성·인물 보정 등 필요한 작업을 안내했습니다.
+              결과물은 JPG, PNG, PDF 등 목적에 맞는 형식으로 전달했습니다.
+            </p>
+          </div>
+          <dl class="freelance-metrics" aria-label="숨고 외주 활동 요약">
+            <div><dt>Review</dt><dd>5.0 / 5</dd></div>
+            <div><dt>Service</dt><dd>사진 편집 및 보정</dd></div>
+            <div><dt>Scope</dt><dd>상담 · 견적 · 보정 · 수정 반영</dd></div>
+            <div><dt>Delivery</dt><dd>JPG · PNG · PDF</dd></div>
+          </dl>
+        </div>
+
+        <div class="freelance-proof-deck" aria-label="숨고 외주 활동 3페이지 증빙 덱">
+          <div class="freelance-proof-deck-copy">
+            <span>PDF Proof Deck</span>
+            <h3>3페이지 증빙을 하나의 팝업에서 확인합니다.</h3>
+            <p>
+              프로필·서비스 설명, 작업 이미지·리뷰, 진행 방식·제공 항목을 한 팝업 안에서 넘겨볼 수 있게 정리했습니다.
+              기본 100%는 이전 150% 체감 크기에 맞춰 더 크게 열립니다.
+            </p>
+            <button class="freelance-proof-open" type="button" data-open-proof data-proof-index="0">3페이지 증빙 열기</button>
+          </div>
+          <div class="freelance-proof-pages" aria-label="숨고 PDF 3페이지 미리보기">
+            <button class="freelance-proof-page" type="button" data-open-proof data-proof-index="0">
+              <img src="./assets/soomgo-freelance-page-01.png" alt="숨고 프로필과 사진 편집 및 보정 서비스 상세설명 전체 페이지" />
+              <span>01 · 프로필/서비스</span>
+            </button>
+            <button class="freelance-proof-page" type="button" data-open-proof data-proof-index="1">
+              <img src="./assets/soomgo-freelance-page-02.png" alt="숨고 사진 및 동영상 작업 이미지와 리뷰 전체 페이지" />
+              <span>02 · 작업/리뷰</span>
+            </button>
+            <button class="freelance-proof-page" type="button" data-open-proof data-proof-index="2">
+              <img src="./assets/soomgo-freelance-page-03.png" alt="숨고 서비스 진행 방식과 제공 항목 질문답변 전체 페이지" />
+              <span>03 · 진행 방식</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section class="target-fit" id="fit">
         <div class="section-head split">
           <div>
@@ -640,6 +693,43 @@
       </div>
     </dialog>
 
+    <dialog class="proof-modal" id="proof-modal" aria-labelledby="proof-modal-title">
+      <div class="proof-modal-shell">
+        <div class="proof-modal-head">
+          <div>
+            <span>Soomgo Proof Preview</span>
+            <h3 id="proof-modal-title">숨고 외주 활동 증빙</h3>
+          </div>
+          <div class="proof-modal-actions" aria-label="이미지 보기 조절">
+            <button type="button" data-proof-zoom-out aria-label="이미지 축소">축소</button>
+            <span data-proof-zoom-label>100%</span>
+            <button type="button" data-proof-zoom-in aria-label="이미지 확대">확대</button>
+            <button type="button" data-proof-zoom-reset aria-label="이미지 맞춤">맞춤</button>
+            <button class="proof-modal-close" type="button" data-close-proof aria-label="증빙 이미지 팝업 닫기">닫기</button>
+          </div>
+        </div>
+        <div class="proof-page-tabs" aria-label="증빙 페이지 바로가기">
+          <button type="button" data-proof-page-button data-proof-index="0">01 프로필</button>
+          <button type="button" data-proof-page-button data-proof-index="1">02 리뷰</button>
+          <button type="button" data-proof-page-button data-proof-index="2">03 진행</button>
+        </div>
+        <div class="proof-modal-stage" data-proof-stage>
+          <figure class="proof-modal-page" data-proof-page>
+            <span>PDF Page 01 · 프로필 · 서비스 설명</span>
+            <img class="proof-modal-image" src="./assets/soomgo-freelance-page-01.png" alt="숨고 프로필과 사진 편집 및 보정 서비스 상세설명 전체 페이지" data-proof-image />
+          </figure>
+          <figure class="proof-modal-page" data-proof-page>
+            <span>PDF Page 02 · 작업 이미지 · 리뷰</span>
+            <img class="proof-modal-image" src="./assets/soomgo-freelance-page-02.png" alt="숨고 사진 및 동영상 작업 이미지와 리뷰 전체 페이지" data-proof-image />
+          </figure>
+          <figure class="proof-modal-page" data-proof-page>
+            <span>PDF Page 03 · 진행 방식 · 제공 항목</span>
+            <img class="proof-modal-image" src="./assets/soomgo-freelance-page-03.png" alt="숨고 서비스 진행 방식과 제공 항목 질문답변 전체 페이지" data-proof-image />
+          </figure>
+        </div>
+      </div>
+    </dialog>
+
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
@@ -764,6 +854,109 @@
         });
       }
 
+      const proofModal = document.getElementById("proof-modal");
+      const proofModalTitle = document.getElementById("proof-modal-title");
+      const proofModalStage = proofModal?.querySelector("[data-proof-stage]");
+      const proofModalImages = proofModal ? [...proofModal.querySelectorAll("[data-proof-image]")] : [];
+      const proofModalPages = proofModal ? [...proofModal.querySelectorAll("[data-proof-page]")] : [];
+      const proofZoomLabel = proofModal?.querySelector("[data-proof-zoom-label]");
+      const openProofButtons = document.querySelectorAll("[data-open-proof]");
+      const closeProofButtons = document.querySelectorAll("[data-close-proof]");
+      const proofPageButtons = proofModal ? [...proofModal.querySelectorAll("[data-proof-page-button]")] : [];
+      const proofZoomInButton = proofModal?.querySelector("[data-proof-zoom-in]");
+      const proofZoomOutButton = proofModal?.querySelector("[data-proof-zoom-out]");
+      const proofZoomResetButton = proofModal?.querySelector("[data-proof-zoom-reset]");
+      const proofBaseWidth = 105;
+      let proofZoom = 100;
+      let currentProofIndex = 0;
+
+      const setProofPageActive = (index) => {
+        currentProofIndex = index;
+        proofPageButtons.forEach((button, buttonIndex) => {
+          button.classList.toggle("is-active", buttonIndex === index);
+        });
+      };
+
+      const scrollToProofPage = (index, behavior = "smooth") => {
+        if (!proofModalStage || !proofModalPages[index]) return;
+        const stageRect = proofModalStage.getBoundingClientRect();
+        const pageRect = proofModalPages[index].getBoundingClientRect();
+        const top = proofModalStage.scrollTop + pageRect.top - stageRect.top;
+        proofModalStage.scrollTo({ top: Math.max(0, top), left: 0, behavior });
+        setProofPageActive(index);
+      };
+
+      const setProofZoom = (value) => {
+        if (!proofModalImages.length) return;
+        proofZoom = Math.max(50, Math.min(260, value));
+        proofModalImages.forEach((image) => {
+          image.style.width = `${(proofBaseWidth * proofZoom) / 100}%`;
+        });
+        if (proofZoomLabel) proofZoomLabel.textContent = `${proofZoom}%`;
+        if (proofModal?.open) requestAnimationFrame(() => scrollToProofPage(currentProofIndex, "auto"));
+      };
+
+      const closeProofModal = () => {
+        if (!proofModal) return;
+        if (typeof proofModal.close === "function" && proofModal.open) {
+          proofModal.close();
+        } else {
+          proofModal.removeAttribute("open");
+          if (!resumeModal?.open && !planModal?.open) document.body.classList.remove("modal-open");
+        }
+      };
+
+      openProofButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          if (!proofModal || !proofModalImages.length) return;
+          const index = Number(button.getAttribute("data-proof-index") || 0);
+          if (proofModalTitle) proofModalTitle.textContent = "숨고 외주 활동 증빙 3페이지";
+          setProofZoom(100);
+          if (typeof proofModal.showModal === "function") {
+            proofModal.showModal();
+          } else {
+            proofModal.setAttribute("open", "");
+          }
+          requestAnimationFrame(() => scrollToProofPage(Number.isFinite(index) ? index : 0, "auto"));
+          document.body.classList.add("modal-open");
+        });
+      });
+
+      closeProofButtons.forEach((button) => {
+        button.addEventListener("click", closeProofModal);
+      });
+
+      proofZoomInButton?.addEventListener("click", () => setProofZoom(proofZoom + 25));
+      proofZoomOutButton?.addEventListener("click", () => setProofZoom(proofZoom - 25));
+      proofZoomResetButton?.addEventListener("click", () => {
+        setProofZoom(100);
+        proofModalStage?.scrollTo({ top: 0, left: 0 });
+        setProofPageActive(0);
+      });
+
+      proofPageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const index = Number(button.getAttribute("data-proof-index") || 0);
+          scrollToProofPage(Number.isFinite(index) ? index : 0, "auto");
+        });
+      });
+
+      proofModalImages.forEach((image) => {
+        image.addEventListener("dblclick", () => {
+          setProofZoom(proofZoom >= 150 ? 100 : 150);
+        });
+      });
+
+      if (proofModal) {
+        proofModal.addEventListener("click", (event) => {
+          if (event.target === proofModal) closeProofModal();
+        });
+
+        proofModal.addEventListener("close", () => {
+          if (!resumeModal?.open && !planModal?.open) document.body.classList.remove("modal-open");
+        });
+      }
+
       const copyContactButtons = document.querySelectorAll("[data-copy-value]");
       const copyToClipboard = async (text) => {
         if (navigator.clipboard && window.isSecureContext) {
@@ -810,8 +1003,3 @@
     </script>
   </body>
 </html>
-
-
-
-
-
